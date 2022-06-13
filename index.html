@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>BCALearn</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+        <meta name="viewport" content="width =device-width, initial-
+        scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <section id="banner">
+            <img src="images/bcalearn.png" class="logo">
+            <div class="banner-text">
+                <h1>Hello</h1>
+                <p>your mother is gay lowkey</p>
+                <div class="banner-btn">
+                    <a href="#"><span></span>Find Out</a>
+                    <a href="#"><span></span>Read More</a>
+                </div>
+
+            </div>
+
+        </section>
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><a href="a">HOME</a></li>
+                    <li><a href="a">BUTTON 1</a></li>
+                    <li><a href="a">BUTTON 2</a></li>
+                    <li><a href="a">BUTTON 3</a></li>
+                    <li><a href="a">BUTTON 4</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="menuBtn">
+            <img src = "images/menu.png" id="menu">
+        </div>
+       <section id="feature">
+        <div class="title-text">
+            <p>FEATURES</p>
+            <h1>Slay.</h1>
+        </div>
+        <div class="feature-box">
+            <div class="features">
+                <h1>balls</h1>
+                <div class="features-desc">
+                    
+                    <div class="feature-text">
+                    <p>BCALearn asf. We are going to DEVOUR this EOY project.</p>
+                </div>
+                </div>
+                <h1>in</h1>
+                <div class="features-desc">
+                    
+                    <div class="feature-text">
+                    <p>this is my last straw.</p>
+                </div>
+                </div>
+                <h1>ur mouth</h1>
+                <div class="features-desc">
+                    
+                    <div class="feature-text">
+                    <p>ok.</p>
+                </div>
+                </div>
+
+            </div>
+            <div class="features-img">
+                <img src="images/harold.jpg"
+                
+            </div>
+        </div>
+       </section>
+
+
+       <section id="service">
+        <div class="title-text">
+            <p>SERVICES</p>
+            <h1>ur literal mother</h1>
+        </div>
+        <div class="service-box">
+            <div class="single-service">
+                <img src="images/one.png">
+            </div>
+            <div class="single-service">
+                <img src="images/two.png">
+            </div>
+            <div class="single-service">
+                <img src="images/three.png">
+            </div>
+            <div class="single-service">
+                <img src="images/four.png">
+            </div>
+            
+        </div>
+       </section>
+
+
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+
+            sideNav.style.right == "-250px";
+
+            menuBtn.onclick = function(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.jpg";
+                }
+                else{
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.jpg";
+                }
+            }
+        </script>
+    </body>
+</html>
