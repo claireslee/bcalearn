@@ -15,7 +15,7 @@
     width: 140px;
     position: absolute;
     top: 4%;
-    left: 10%;
+    left: 1%;
 }
 .banner-text{
     text-align: center;
@@ -27,6 +27,47 @@
     font-size: 130px;
 }
 .banner-text p{
+    font-size: 20px;
+    font-style: italic;
+}
+#banner2{
+    background: linear-gradient(rgba(0,0,0,0.5),#fff);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+.banner-text2{
+    text-align: center;
+    color: #5c34c2;
+    padding-top: 180px;
+
+}
+.banner-text2 h1{
+    font-size: 130px;
+}
+.banner-text2 p{
+    font-size: 20px;
+    font-style: italic;
+}
+
+#banner3{
+    background: linear-gradient(rgba(0,0,0,0.5),#a342e7);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+.banner-text3{
+    text-align: center;
+    color: #fff;
+    padding-top: 180px;
+
+}
+.banner-text3 h1{
+    font-size: 130px;
+}
+.banner-text3 p{
     font-size: 20px;
     font-style: italic;
 }
@@ -303,6 +344,7 @@ hr{
     border-radius: 5px;
     box-shadow: 0 10px 20px 3px #5c34c2;
     cursor: pointer;
+    transition: transform .5s;
 
 }
 .testimonial-col p{
@@ -323,4 +365,108 @@ hr{
 .user-info small{
     color:#5c34c2;
 }
+.testimonial-col:hover{
+    transform: translateY(-7px);
+}
+@media screen and (max-width: 770px){
+    .testimonial-col{
+        flex-basis: 100%;
+
+    }
+}
+
+#footer{
+    padding: 100px 0 20px;
+    background: #efefef;
+    position: relative;
+
+}
+.footer-row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-left, .footer-right{
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+.footer-right{
+    text-align: right;
+}
+
+.footer-row h1{
+    margin: 10px 0;
+}
+.footer-row p{
+    line-height: 35px;
+}
+.footer-img{
+    max-width: 370px;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 770px){
+    .footer-left, .footer-right{
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+    .footer-img{
+        top: 25%;
+    }
+
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #5c34c2;
+}
+
+.button:hover {
+  background-color: #5c34c2;
+  color: white;
+}
+
+.button2 {
+    width: 140px;
+    position: absolute;
+    top: 4%;
+    right: 1%;
+  }
+  
+  .button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #5c34c2;
+    
+  }
+  
+  .button2:hover {
+    background-color: #5c34c2;
+    color: white;
+  }
+
+
+
 
