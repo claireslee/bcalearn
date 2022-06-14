@@ -1,0 +1,12 @@
+#container {
+    height: 785px;
+    width: 1425px;
+    background-color: White;
+}
+
+#button{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    outline: lightgrey;
+}
