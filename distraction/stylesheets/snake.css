@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+body {
+    font-family:'Poppins', sans-serif;
+    text-align: center;
+}
+.button {
+    width: 100px;
+    position: absolute;
+    top: 4%;
+  }
+  
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #5c34c2;
+    
+  }
+  
+  .button:hover {
+    background-color: #5c34c2;
+    color: white;
+  }

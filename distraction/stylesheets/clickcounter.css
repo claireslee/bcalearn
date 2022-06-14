@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(218, 200, 254);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+}
+
+.countButton button:hover {
+    background-color: mediumpurple;
+}
+
+.refreshButton button:hover {
+    background-color: mediumpurple;
+}
+
+.countButton button {
+    background-color: white;
+    color: mediumpurple;
+    border: 2px solid mediumpurple;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+   
+}
+
+/* Green */
+
+.refreshButton button {
+    background-color: white;
+    color: mediumpurple;
+    border: 2px solid mediumpurple;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+    align: center;
+}
+
+.button {
+    width: 100px;
+    position: absolute;
+    top: 4%;
+  }
+  
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #5c34c2;
+    
+  }
+  
+  .button:hover {
+    background-color: #5c34c2;
+    color: white;
+  }
+/* Green */

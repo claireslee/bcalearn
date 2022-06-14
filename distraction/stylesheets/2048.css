@@ -1,0 +1,117 @@
+body{
+    background-color: rgb(218, 200, 254);
+    font-family: verdana;
+    text-align: center;
+}
+
+hr{
+    width: 500px;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+
+    background-color: rgb(227, 215, 255);
+    border: 6px solid rgb(217, 200, 255);
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    width: 90px;
+    height: 90px;
+    border: 5px solid rgb(217, 200, 255);
+
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.x2 {
+    background-color: white;
+    color: mediumpurple;
+}
+
+.x4 {
+    background-color: rgb(215, 190, 255);
+    color: mediumpurple;
+}
+
+.x8 {
+    background-color: rgb(204, 179, 255);
+    color: white;
+}
+
+.x16{
+    background-color: rgb(191, 159, 254);
+    color: white;
+}
+
+.x32{
+    background-color: rgb(175, 136, 253);
+    color: white;
+}
+
+.x64{
+    background-color: rgb(157, 108, 255);
+    color: white;
+}
+
+.x128{
+    background-color: rgb(139, 80, 255);
+    color: white;
+}
+
+.x256{
+    background-color: rgb(118, 50, 255);
+    color: white;
+}
+
+.x512{
+    background-color: rgb(92, 11, 255);
+    color: white;
+}
+
+.x1024{
+    background-color: rgb(70, 1, 207);
+    color: white;
+}
+
+.x2048{
+    background-color: rgb(50, 2, 147);
+    color: white;
+}
+
+.x4096 {
+    background-color: rgb(27, 1, 78);
+    color: white;
+}
+
+.x8192 {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.button {
+    width: 100px;
+    position: absolute;
+    top: 4%;
+  }
+  
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #5c34c2;
+    
+  }
+  
+  .button:hover {
+    background-color: #5c34c2;
+    color: white;
+  }
