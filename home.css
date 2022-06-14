@@ -170,3 +170,379 @@ change position to absolute if we want a leaf.
     }
 
 }
+#distraction{
+    width: 100%;
+    padding: 70px 0;
+    background: #efefef;  
+}
+.distraction-box{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+.single-distraction{
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+.single-distraction img{
+    width: 100%;
+    border-radius: 7px;
+
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(rgba(0,0,0,0.5), #a342e7);
+    opacity: 0;
+    transition: 1s;
+}
+.single-distraction:hover .overlay{
+    opacity: 1;
+    
+}
+.distraction-desc{
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: 1s;
+
+}
+hr{
+    background: #fff;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+.distraction-desc p{
+    font-size: 14px;
+
+}
+.single-distraction:hover .distraction-desc{
+    bottom: 40%;
+    opacity: 1;
+}
+@media screen and (max-width: 770px){
+    .single-distraction{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .distraction-desc p{
+        font-size: 12px;
+    }
+    hr{
+        margin: 5px auto;
+    }
+    .single-distraction:hover .distraction-desc{
+        bottom: 25% !important;
+    
+    }
+}
+#more{
+    width: 100%;
+    padding: 70px 0;
+}
+
+.title-text{
+    text-align: center;
+    padding-bottom: 60px;
+
+}
+.title-text p{
+    margin: auto;
+    font-size: 50px;
+    color: #5c34c2;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    top: 20px;
+}
+/*
+change position to absolute if we want a leaf.
+*/
+.title-text p::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#a342e7,#fff);
+    position: none;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.title-text h1{
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.more-box{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.mores{
+    flex-basis: 50%;
+
+}
+.mores-img{
+    flex-basis: 50%;
+    margin: auto;
+}
+.mores-img img{
+    width: 70%;
+    border-radius: 10px;
+
+}
+.mores h1{
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color:#a342e7;
+}
+.mores-desc{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+.more-text p{
+    padding: 0 20px;
+    text-align: initial; 
+
+}
+@media screen and (max-width: 770px){
+    .title-text h1{
+        font-size: 35px;
+    }
+    .mores{
+        flex-basis: 100%;
+    }
+    .mores-img{
+        flex-basis: 100%;
+    }
+    .mores-img img{
+        width: 100%;
+    }
+
+}
+#aboutus{
+    width:100%;
+    padding: 70px 0;
+    background: #efefef;  
+    
+}
+.aboutus-row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+.aboutus-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #5c34c2;
+    cursor: pointer;
+    transition: transform .5s;
+
+}
+.aboutus-col p{
+    font-size: 20px;
+    text-align: right;
+    padding-right: 60px;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.user img{
+    width: 125px;
+    margin-right: 20px;
+    border-radius: 3px;
+
+}
+.user-info small{
+    color:#5c34c2;
+    font-size: 20px;
+}
+
+
+
+
+.aboutus2-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #5c34c2;
+    cursor: pointer;
+    transition: transform .5s;
+
+}
+.aboutus2-col p{
+    font-size: 16px;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.user2{
+    display: flex;
+    align-items: left;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.user2 img{
+    width: 70px;
+    margin-right: 20px;
+    border-radius: 3px;
+
+}
+.user2-info small{
+    color:#5c34c2;
+    font-size: 20px;
+}
+
+.aboutus3-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #5c34c2;
+    cursor: pointer;
+    transition: transform .5s;
+
+}
+
+.aboutus3-col p{
+    font-size: 20px;
+    text-align: right;
+    padding-right: 137px;
+}
+
+.user3{
+    display: flex;
+    align-items: left;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.user3 img{
+    width: 70px;
+    margin-right: 20px;
+    border-radius: 3px;
+
+}
+.user3-info small{
+    color:#5c34c2;
+    font-size: 20px;
+}
+
+
+
+
+
+.aboutus-col:hover{
+    transform: translateY(-7px);
+}
+@media screen and (max-width: 770px){
+    .aboutus-col{
+        flex-basis: 100%;
+
+    }
+}
+
+.aboutus2-col:hover{
+    transform: translateY(-7px);
+}
+@media screen and (max-width: 770px){
+    .aboutus2-col{
+        flex-basis: 100%;
+
+    }
+}
+
+.aboutus3-col:hover{
+    transform: translateY(-7px);
+}
+@media screen and (max-width: 770px){
+    .aboutus3-col{
+        flex-basis: 100%;
+
+    }
+}
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #5c34c2;
+  }
+  
+  .button:hover {
+    background-color: #5c34c2;
+    color: white;
+  }
+
+  .button2 {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .button2 {
+    background: linear-gradient(rgba(254, 254, 254, 0.5),#5c34c2);
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .button2:hover {
+    background-color: #fff;
+    color: #5c34c2;
+  }
