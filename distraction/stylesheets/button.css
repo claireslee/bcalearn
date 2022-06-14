@@ -51,3 +51,23 @@ body {
     border: none;
     background-color: Transparent;
   }
+
+  .button {
+    width: 100px;
+    position: absolute;
+    top: 4%;
+    right: 90%;
+
+  }
+  
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #5c34c2;
+    
+  }
+  
+  .button:hover {
+    background-color: #5c34c2;
+    color: white;
+  }

@@ -49,21 +49,20 @@ nav ul li a{
     color: #fff;
 }
 #menuBtn{
-    width: 50px;
+    width: 125px;
     height: 50px;
     background: #5c34c2;
     text-align: center;
     position: fixed;
-    right: 30px;
+    right: 10px;
     top: 20px;
     border-radius: 3px;
     z-index: 3;
     cursor: pointer;
 }
 
-#menuBtn img{
-    width: 20px;
-    margin-top: 15px;
+#menuBtn p{
+   font-size: 4px;
 }
 @media screen and (max-width: 770px){
     .banner-text h1{
