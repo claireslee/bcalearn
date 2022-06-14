@@ -1,0 +1,811 @@
+<body onload="NextQuestion(0)">
+    <main>
+        <div class="modal-container" id="score-modal">
+ 
+            <div class="modal-content-container">
+ 
+                <h1>We have gathered your choices and it looks like:</h1>
+ 
+                <div class="grade-details">
+                    <p ><span id="remarks"></span></p>
+                </div>
+ 
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                    <button onclick="email()">Email Results</button>
+                </div>
+ 
+            </div>
+        </div>
+ 
+        <div class="game-quiz-container">
+ 
+            <div class="game-points-container">
+                <h1>Score : <span id="player-score"></span> / 10</h1>
+            </div>
+            <div class="game-details-container">
+                <h1> Question : <span id="question-number"></span> / 10</h1>
+            </div>
+ 
+ 
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+ 
+            <div class="game-options-container">
+ 
+               <div class="modal-container" id="option-modal">
+ 
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+ 
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+ 
+                    </div>
+ 
+               </div>
+ 
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+ 
+ 
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+ 
+ 
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+ 
+ 
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+ 
+                <span>
+                    <input type="radio" id="option-five" name="option" class="radio" value="optionE" />
+                    <label for="option-five" class="option" id="option-five-label"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="option-six" name="option" class="radio" value="optionF" />
+                    <label for="option-six" class="option" id="option-six-label"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="option-seven" name="option" class="radio" value="optionG" />
+                    <label for="option-seven" class="option" id="option-seven-label"></label>
+                </span>
+ 
+            </div>
+ 
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+ 
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+ 
+<script>
+ const questions = [
+ {
+        question: "What is your favorite animal?",
+        optionA: "Worm",
+        optionB: "Duck",
+        optionC: "Snake",
+        optionD: "Butterfly",
+        optionE: "Honeybee",
+        optionF: "Bear",
+        optionG: "Turtle",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+ 
+    {
+        question: "What is your favorite pasta shape?",
+        optionA: "Spaghetti",
+        optionB: "Ditalini",
+        optionC: "Bowtie",
+        optionD: "Wheels",
+        optionE: "Penne",
+        optionF: "Rigatoni",
+        optionG: "Linguini",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+ 
+    {
+        question: "What is your favorite flower?",
+        optionA: "Tulip",
+        optionB: "Rose",
+        optionC: "Daffodil",
+        optionD: "Sunflower",
+        optionE: "Daisy",
+        optionF: "Carnation",
+        optionG: "Orchid",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+ 
+    {
+        question: "Which of these would you say describes you best?",
+        optionA: "Wild",
+        optionB: "Funny",
+        optionC: "Precious",
+        optionD: "Jolly",
+        optionE: "Genuine",
+        optionF: "Thankful",
+        optionG: "Turtle",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+    {
+        question: "Pick a color:",
+        optionA: "Yellow",
+        optionB: "Red",
+        optionC: "Blue",
+        optionD: "Purple",
+        optionE: "Green",
+        optionF: "Orange",
+        optionG: "Pink",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+    {
+        question: "Pick a hobby:",
+        optionA: "Hiking",
+        optionB: "Swimming",
+        optionC: "Reading",
+        optionD: "Painting",
+        optionE: "Sleeping",
+        optionF: "Singing",
+        optionG: "Journaling",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+    {
+        question: "What do you value most?",
+        optionA: "Money",
+        optionB: "Family",
+        optionC: "Happiness",
+        optionD: "Beauty",
+        optionE: "Friends",
+        optionF: "Peace and Quiet",
+        optionG: "Personal Health",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+    {
+        question: "Pick a cereal:",
+        optionA: "Fruit Loops",
+        optionB: "Lucky Charms",
+        optionC: "Cheeerios",
+        optionD: "Frosted Flakes",
+        optionE: "Trix",
+        optionF: "Cocoa Puffs",
+        optionG: "Captain Crunch",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+    {
+        question: "Pick a flower:",
+        optionA: "Rose",
+        optionB: "Tulip",
+        optionC: "Poppy",
+        optionD: "Hydrangea",
+        optionE: "Lotus",
+        optionF: "Daisy",
+        optionG: "Lilac",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+
+    {
+        question: "Dream vacation spot?",
+        optionA: "Greece",
+        optionB: "Mexico",
+        optionC: "Florida",
+        optionD: "Japan",
+        optionE: "Antartica",
+        optionF: "Italy",
+        optionG: "Madagascar",
+        chosenOptionA: "optionA",
+        chosenOptionB: "optionB",
+        chosenOptionC: "optionC",
+        chosenOptionD: "optionD",
+        chosenOptionE: "optionE",
+        chosenOptionF: "optionF",
+        chosenOptionG: "optionG",
+    },
+ 
+]
+ 
+ 
+let shuffledQuestions = []
+function handleQuestions() {
+    while (shuffledQuestions.length <= 9) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)) {
+            shuffledQuestions.push(random)
+        }
+    }
+}
+ 
+ 
+let questionNumber = 1
+let playerScore = 0  
+let indexNumber = 0
+ 
+function NextQuestion(index) {
+    handleQuestions()
+    const currentQuestion = shuffledQuestions[index]
+    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+    document.getElementById("option-five-label").innerHTML = currentQuestion.optionE;
+    document.getElementById("option-six-label").innerHTML = currentQuestion.optionF;
+    document.getElementById("option-seven-label").innerHTML = currentQuestion.optionG;
+ 
+}
+ 
+ 
+function checkForAnswer() {
+    const currentQuestion = shuffledQuestions[indexNumber]
+    const options = document.getElementsByName("option");
+    const currentOptionA = currentQuestion.chosenOptionA
+    let chosenOptionA = null
+    const currentOptionB = currentQuestion.chosenOptionB
+    let chosenOptionB = null
+    const currentOptionC = currentQuestion.chosenOptionC
+    let chosenOptionC = null
+    const currentOptionD = currentQuestion.chosenOptionD
+    let chosenOptionD = null
+    const currentOptionE = currentQuestion.chosenOptionE
+    let chosenOptionE = null
+    const currentOptionF = currentQuestion.chosenOptionF
+    let chosenOptionF = null
+    const currentOptionG = currentQuestion.chosenOptionG
+    let chosenOptionG = null
+ 
+    options.forEach((option) => {
+        if (option.value === currentOptionA) {
+            chosenOptionA = option.labels[0].id
+        }
+        else if (option.value === currentOptionB) {
+             chosenOptionB = option.labels[0].id
+        }
+        else if (option.value === currentOptionC) {
+             chosenOptionC = option.labels[0].id
+        }
+        else if (option.value === currentOptionD) {
+            chosenOptionD = option.labels[0].id
+        }
+        else if (option.value === currentOptionE) {
+             chosenOptionE = option.labels[0].id
+        }
+        else if (option.value === currentOptionF) {
+             chosenOptionF = option.labels[0].id
+        }
+        else if (option.value === currentOptionG) {
+            chosenOptionG = option.labels[0].id
+        }
+    })
+ 
+    if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false && options[4].checked === false && options[5].checked === false && options[6].checked == false) {
+        document.getElementById('option-modal').style.display = "flex"
+    }
+ 
+    options.forEach((option) => {
+        if(option.checked)
+        {
+            if (option.value === currentOptionA) {
+            playerScore+=20;
+            }
+            else if (option.value === currentOptionB) {
+            playerScore+=40;
+            }
+            else if (option.value === currentOptionC) {
+            playerScore+=60;
+            }
+            else if (option.value === currentOptionD) {
+            playerScore+=80;
+            }
+            else if (option.value === currentOptionE) {
+            playerScore+=100;
+            }
+            else if (option.value === currentOptionF) {
+            playerScore+=120;
+            }
+            else if (option.value === currentOptionG) {
+            playerScore+=140;
+            }
+            indexNumber++
+            questionNumber++
+        }
+       
+    })
+}
+ 
+ 
+function handleNextQuestion() {
+    checkForAnswer()
+    unCheckRadioButtons()
+    setTimeout(() => {
+        if (indexNumber <= 9) {
+           NextQuestion(indexNumber)
+        }
+        else {
+            handleEndGame()
+         }
+        resetOptionBackground()
+    }, 1000);
+}
+
+ 
+function email()
+{
+    window.open('mailto:ENTERYOUREMAIL@gmail.com?body=I was told: ' + finalRemark + ' after taking the buzzfeed quiz.');
+ 
+}
+ 
+function resetOptionBackground() {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).style.backgroundColor = ""
+    })
+}
+ 
+ 
+function unCheckRadioButtons() {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+let finalRemark = null
+function handleEndGame() {
+    let remark = null
+    let remarkColor = null
+ 
+    if (playerScore <= 350 && playerScore >= 200) {
+        remark = "You belong in AAST!"
+        finalRemark = "You belong in AAST!"
+        remarkColor = "pink"
+    }
+    else if (playerScore <= 500 && playerScore > 350) {
+        remark = "You belong in ATCS!"
+        finalRemark = "You belong in ATCS!"
+        remarkColor = "pink"
+    }
+    else if (playerScore <= 650 && playerScore > 500) {
+        remark = "You belong in ABF!"
+        finalRemark = "You belong in ABF!"
+        remarkColor = "pink"
+    }
+    else if (playerScore <= 800 && playerScore > 650) {
+        remark = "You belong in AVPA!"
+        finalRemark = "You belong in AVPA!"
+        remarkColor = "pink"
+    }
+    else if (playerScore <= 1000 && playerScore > 800) {
+        remark = "You belong in ACAHA!"
+        finalRemark = "You belong in ACAHA!"
+        remarkColor = "pink"
+    }
+    else if (playerScore <= 1200 && playerScore > 1000) {
+        remark = "You belong in AMST!"
+        finalRemark = "You belong in AMST!"
+        remarkColor = "pink"
+    }
+ 
+    else if (playerScore <= 1400 && playerScore > 1200) {
+        remark = "You belong in AEDT!"
+        finalRemark = "You belong in AEDT!"
+        remarkColor = "pink"
+    }
+ 
+    document.getElementById('remarks').innerHTML = remark
+    document.getElementById('remarks').style.color = remarkColor
+    document.getElementById('score-modal').style.display = "flex"
+ 
+}
+ 
+function closeScoreModal() {
+    questionNumber = 1
+    playerScore = 0
+    wrongAttempt = 0
+    indexNumber = 0
+    shuffledQuestions = []
+    NextQuestion(indexNumber)
+    document.getElementById('score-modal').style.display = "none"
+}
+ 
+function closeOptionModal() {
+    document.getElementById('option-modal').style.display = "none"
+}
+ 
+    </script>
+ 
+    <style>
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+html, body{
+    height: 100%;
+}
+ 
+ 
+body{
+    font-family: 'Georgia', serif;
+ 
+}
+ 
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    background: url('../assets/background_image.jpg');
+    background-color : white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+ 
+.game-quiz-container{
+    width: 40rem;
+    height: 30rem;
+    color: rgb(98, 173, 170);
+    background-color: white;
+    border: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+ 
+.game-points-container{
+    width: 40%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+}
+ 
+.game-details-container{
+    width: 40%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(98, 173, 170);
+    align-items: center;
+}
+ 
+.game-details-container h1{
+    font-size: 1.2rem;
+}
+ 
+.game-question-container{
+    width: 80%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid lightgray;
+    border-radius: 25px;
+}
+ 
+.game-question-container h1{
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 3px;
+}
+ 
+.game-options-container{
+    width: 80%;
+    height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+ 
+.game-options-container span{
+    width: 45%;
+    height: 3rem;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+span label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-weight: 600;
+    color: rgb(98, 173, 170);
+}
+ 
+span label:hover{
+    -ms-transform: scale(1.12);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
+    color: lightgray;
+}
+ 
+input[type="radio"] {
+    position: relative;
+    display: none;
+}
+ 
+ 
+input[type=radio]:checked ~ .option {
+    background: rgb(98, 173, 170);
+}
+ 
+.next-button-container{
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.next-button-container button{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    background: none;
+    color: rgb(98, 173, 170);
+    font-weight: 600;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    outline: none;
+}
+.next-button-container button:hover{
+    color: white;
+    background-color: rgb(98, 173, 170);
+}
+
+.start-button-container button{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    background: none;
+    color: rgb(98, 173, 170);
+    font-weight: 600;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    outline: none;
+}
+.start-button-container button:hover{
+    color: white;
+    background-color: rgb(98, 173, 170);
+}
+ 
+.modal-container{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
+}
+ 
+.modal-content-container{
+    height: 20rem;
+    width: 25rem;
+    background-color:rgb(98, 173, 170);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+}
+ 
+.modal-content-container h1{
+    font-size: 1.3rem;
+    height: 3rem;
+    color: lightgray;
+    text-align: center;
+}
+ 
+.grade-details{
+    font-size: 1rem;
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+ 
+.grade-details p{
+    color: white;
+    text-align: center;
+}
+ 
+.modal-button-container{
+    font-size: 1rem;
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.modal-button-container button{
+    width: 10rem;
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: 1px solid rgb(252, 242, 241);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.modal-button-container button:hover{
+    background-color: rgb(98, 173, 170);
+}
+ 
+@media(min-width : 300px) and (max-width : 350px){
+    .game-quiz-container{
+        width: 90%;
+        height: 80vh;
+     }
+     .game-details-container h1{
+        font-size: 0.8rem;
+     }
+ 
+     .game-question-container{
+        height: 6rem;
+     }
+     .game-question-container h1{
+       font-size: 0.9rem;
+    }
+ 
+    .game-options-container span{
+        width: 90%;
+        height: 2.5rem;
+    }
+    .game-options-container span label{
+        font-size: 0.8rem;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+ 
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+ 
+@media(min-width : 350px) and (max-width : 700px){
+   .game-quiz-container{
+       width: 90%;
+       height: 80vh;
+    }
+    .game-details-container h1{
+        font-size: 1rem;
+    }
+ 
+    .game-question-container{
+        height: 8rem;
+    }
+ 
+    .game-question-container h1{
+        font-size: 0.9rem;
+     }
+ 
+    .game-options-container span{
+        width: 90%;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+ 
+ 
+ 
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+ 
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+        </style>
